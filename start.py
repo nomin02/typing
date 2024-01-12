@@ -1,11 +1,21 @@
+import tkinter
 
-succ_count = 0;fail_count = 0
-typing_list = ['무궁화', '꽃이', '피었습니다.', 'The']
-for list_item in typing_list:
-    print(list_item)
-    typing_input = input(">>:")
-    if list_item == typing_input:
-        succ_count +=1
-    else:
-        fail_count +=1
-    print('타이핑 연습 종료! 정답: ',succ_count,' 오류: ',fail_count)
+window = tkinter.Tk()
+
+window.title("Mongolia typing test")
+window.geometry("640x400+100+100")
+window.resizable(False, False)
+
+count = 0
+
+def countUP():
+    global count
+    count +=1
+    label.config(text = str(count))
+
+label = tkinter.Label(window, text = "Typing Practice", font = ("Arial", 30))
+label.pack()
+
+button = tkinter.Button(window, text = "자리 연습", overrelief="solid", width = 15, repeatdelay=1000, repeatinterval=100, padx=100, pady = 30, bg = "gray", fg = "black")
+button.pack()
+window.mainloop()
